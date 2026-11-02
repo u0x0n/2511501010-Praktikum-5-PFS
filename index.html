@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Mahasiswa</title>
+
+    <!-- Bootstrap CSS lokal -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+
+    <style>
+      /* WARNA UTAMA WEBSITE */
+      :root {
+        --warna-utama: #7189db;
+        --warna-gelap: #40558f;
+        --warna-muda: #eaf0ff;
+        --warna-latar: #f8f9ff;
+        --warna-teks: #35415e;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--warna-latar);
+        color: var(--warna-teks);
+        font-family: Arial, sans-serif;
+      }
+
+      /* NAVBAR */
+      .navbar-custom {
+        background-color: var(--warna-gelap);
+      }
+
+      .navbar-brand {
+        letter-spacing: 1px;
+      }
+
+      .navbar .nav-link {
+        color: white;
+        margin-left: 12px;
+      }
+
+      .navbar .nav-link:hover {
+        color: #d8e2ff;
+      }
+
+      /* TOMBOL */
+      .btn-custom {
+        background-color: var(--warna-utama);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 10px 24px;
+      }
+
+      .btn-custom:hover {
+        background-color: var(--warna-gelap);
+        color: white;
+      }
+
+      /* BERANDA */
+      .hero {
+        background: linear-gradient(135deg, #eaf0ff, #d9e2ff);
+        padding: 90px 20px;
+      }
+
+      .hero h1 {
+        color: var(--warna-gelap);
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      /* FOTO PROFIL */
+      .foto-profil {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 7px solid white;
+        box-shadow: 0 5px 20px rgba(50, 70, 120, 0.2);
+      }
+
+      /* JUDUL BAGIAN */
+      .judul-section {
+        color: var(--warna-gelap);
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      .subjudul {
+        text-align: center;
+        color: #77819b;
+        margin-bottom: 35px;
+      }
+
+      /* TENTANG SAYA */
+      .about-box {
+        background-color: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(50, 70, 120, 0.07);
+      }
+
+      /* KARTU KEMAMPUAN */
+      .skill-card {
+        background-color: white;
+        border: none;
+        border-radius: 15px;
+        padding: 25px 15px;
+        height: 100%;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(50, 70, 120, 0.07);
+        transition: 0.3s;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 8px 20px rgba(50, 70, 120, 0.15);
+      }
+
+      .skill-icon {
+        font-size: 42px;
+        margin-bottom: 15px;
+      }
+
+      .skill-card h5 {
+        color: var(--warna-gelap);
+        font-weight: bold;
+      }
+
+      /* KARTU PROYEK */
+      .project-card {
+        background-color: white;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 100%;
+        box-shadow: 0 4px 15px rgba(50, 70, 120, 0.08);
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-7px);
+      }
+
+      .project-icon {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 65px;
+      }
+
+      .project-one {
+        background-color: #e1eaff;
+      }
+
+      .project-two {
+        background-color: #eee5ff;
+      }
+
+      .project-three {
+        background-color: #e0f2f1;
+      }
+
+      .project-card h5 {
+        color: var(--warna-gelap);
+        font-weight: bold;
+      }
+
+      /* KONTAK */
+      .contact-section {
+        background-color: var(--warna-muda);
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: var(--warna-gelap);
+        color: white;
+      }
+
+      /* RESPONSIF */
+      @media (max-width: 767px) {
+        .hero {
+          text-align: center;
+          padding: 50px 20px;
+        }
+
+        .hero h1 {
+          font-size: 30px;
+        }
+
+        .foto-profil {
+          width: 180px;
+          height: 180px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#beranda"> ✨ Portofolio Saya </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuNavigasi"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNavigasi">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#beranda">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kemampuan">Kemampuan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyek">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- BERANDA / PROFIL -->
+    <section class="hero" id="beranda">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <!-- TULISAN DI KIRI -->
+          <div class="col-md-7">
+            <p class="text-primary fw-bold">HALO, SELAMAT DATANG!</p>
+
+            <h1 class="fw-bold">Halo, Saya Mahasiswa TI!</h1>
+
+            <p class="mt-3">
+              Saya adalah mahasiswa Teknologi Informasi yang tertarik pada dunia
+              teknologi, pemrograman, dan pengembangan website.
+            </p>
+
+            <a href="#proyek" class="btn btn-custom mt-3">
+              Lihat Proyek Saya →
+            </a>
+          </div>
+
+          <!-- FOTO DI KANAN -->
+          <div class="col-md-5 text-center">
+            <img src="foto.jpg" alt="Foto Profil" class="foto-profil" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section class="container py-5" id="tentang">
+      <h2 class="judul-section">Tentang Saya</h2>
+
+      <p class="subjudul">Sedikit informasi mengenai diri saya.</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <div class="about-box text-center">
+            <p>
+              Saya merupakan mahasiswa Program Studi Teknologi Informasi yang
+              memiliki ketertarikan dalam mempelajari teknologi digital. Saat
+              ini saya sedang mengembangkan kemampuan dalam bidang pemrograman,
+              desain antarmuka, dan pembuatan website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEMAMPUAN -->
+    <section class="container py-5" id="kemampuan">
+      <h2 class="judul-section">Kemampuan Saya</h2>
+
+      <p class="subjudul">Beberapa teknologi yang sedang saya pelajari.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h5>HTML</h5>
+            <p>Membuat struktur halaman website.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h5>CSS</h5>
+            <p>Mengatur desain dan tampilan website.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <h5>JavaScript</h5>
+            <p>Membuat website lebih interaktif.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h5>Bootstrap</h5>
+            <p>Membuat tampilan website responsif.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYEK -->
+    <section class="container py-5" id="proyek">
+      <h2 class="judul-section">Proyek Saya</h2>
+
+      <p class="subjudul">
+        Beberapa contoh proyek dan latihan yang pernah saya kerjakan.
+      </p>
+
+      <div class="row g-4">
+        <!-- PROYEK 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card">
+            <div class="project-icon project-one">🌐</div>
+
+            <div class="card-body">
+              <h5 class="card-title">Website Portofolio</h5>
+
+              <p class="card-text">
+                Membuat website pribadi menggunakan HTML, CSS, dan Bootstrap.
+              </p>
+
+              <a href="#kontak" class="btn btn-custom"> Lihat Detail </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROYEK 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card">
+            <div class="project-icon project-two">🎨</div>
+
+            <div class="card-body">
+              <h5 class="card-title">Desain Antarmuka</h5>
+
+              <p class="card-text">
+                Membuat desain tampilan aplikasi yang menarik dan mudah
+                digunakan.
+              </p>
+
+              <a href="#kontak" class="btn btn-custom"> Lihat Detail </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROYEK 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card">
+            <div class="project-icon project-three">💻</div>
+
+            <div class="card-body">
+              <h5 class="card-title">Aplikasi Sederhana</h5>
+
+              <p class="card-text">
+                Mempelajari pembuatan aplikasi sebagai latihan pemrograman.
+              </p>
+
+              <a href="#kontak" class="btn btn-custom"> Lihat Detail </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="contact-section py-5" id="kontak">
+      <div class="container text-center">
+        <h2 class="judul-section">Hubungi Saya</h2>
+
+        <p class="mb-4">
+          Terima kasih telah mengunjungi website portofolio saya.
+        </p>
+
+        <a href="mailto:emailkamu@example.com" class="btn btn-custom">
+          ✉ Kirim Email
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-4">
+      <div class="container">
+        <p class="mb-1 fw-bold">Portofolio Mahasiswa TI</p>
+
+        <p class="mb-0">© 2026 Portofolio Saya | Praktikum Bootstrap</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript lokal -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
